@@ -1,0 +1,102 @@
+<section class="main-content">
+    <div class="header ">
+       <div class="navbar">
+          <div class="logo">
+             <img src="../../assets/Web/Logo Web.svg">
+          </div>
+          <div class="nav-item">
+             <a class="nav-content">Home</a>
+             <a class="nav-content">Explore</a>
+             <a class="nav-content">Collection</a>
+             <a class="nav-content">Submit</a>
+             <a class="nav-content">Login</a>
+             <button class="btn btn-success">Join Free</button>
+          </div>
+          <!-- <div class="mob-nav">
+             </div> -->
+       </div>
+    </div>
+    <div class="mob-header">
+       <div class="row m-0">
+          <div class="navbar row w-100 m-0 ">
+             <div class="logo col-3">
+                <img src="../../assets/Mobile/Logo Mob.svg">
+             </div>
+             <div class="col-9 text-right">
+                <div class="row float-right">
+                   <div class="nav-icons" href="#"><img src="../../assets/Mobile/home-icon_mobile.svg"
+                      class="icon"><span
+                      class="row mr-0 ml-0 icon-title">Home</span></div>
+                   <div class="nav-icons" href="#"><img src="../../assets/Mobile/Explore_mobile.svg"
+                      class="icon"><span
+                      class="row mr-0 ml-0 icon-title">Explore</span></div>
+                   <div class="nav-icons" href="#"><img src="../../assets/Mobile/collections_mobile.svg"
+                      class="icon"><span class="row mr-0 ml-0 icon-title">Collection</span>
+                   </div>
+                   <div class="nav-icons" href="#"><img src="../../assets/Mobile/submit_mobile.svg"
+                      class="icon"><span
+                      class="row mr-0 ml-0 icon-title">Submit</span></div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row m-0 pt-2">
+          <div class="col-12 row mt-2 mb-2">
+             <div class="col-6 text-center">
+                <button class="btn btn-outline-dark">Join Free</button>
+             </div>
+             <div class="col-6  text-center">
+                <button class="btn btn-success">Join Free</button>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="w-100">
+       <div class="input-group mb-3 input-text" *ngIf="searchDisplay">
+          <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon1">
+             <i class="material-icons icon-cust" (click)="getSearchQuery(page)">search</i>
+             </span>
+          </div>
+          <input type="text" [(ngModel)]="search" (keyup.enter)="getSearchQuery(page)"
+          class="form-control custom-input" placeholder="Search Free Photos..." aria-label="Username"
+          aria-describedby="basic-addon1">
+
+       </div>
+       <div *ngIf="noImage" style="text-align: center;color:red">No Image Found Please search new Image.</div>
+       <div class="row" *ngIf="addValueDisplay">
+           <div class="col-2"></div>
+            <div class="col-4" style="text-align: center" id="shadow-element">
+        <a (click)="getClickedAnchor(0)">Pagination</a></div>
+        <div class="col-4"  style="text-align: center" id="shadow-element">
+        <a (click)="getClickedAnchor(1)">Lazyloading</a></div>
+        <div class="col-2"></div>
+    </div>
+    </div>
+
+    <ngx-masonry class="masonry-layout"  [options]="{ transitionDuration: '0.8s' }" [updateLayout]="updateMasonryLayout" [useImagesLoaded]="true" [updateLayout]="true">
+    <div ngxMasonryItem class="masonry-item" *ngFor="let item of newImage | paginate: { itemsPerPage: 10, currentPage: page,totalItems: gettingTotal }">
+       <!--            {{item.urls.regular}}-->
+       <img [src]="item.urls.regular" style="width: 100%;background-color: transparent"  (click)="gettingSelectedImage(item.urls.regular)"/>
+    </div>
+    </ngx-masonry>
+    
+    <div style="text-align: center">
+            <button *ngIf="displayLazyLoading" (click)="perViewImagesLoaded(event)" id="button_lazy">Show More Images</button>
+        <pagination-controls *ngIf="displayPagination" (pageChange)="pageChanged($event)" style="    text-align: center;
+        height: 135px;
+        margin-top: 47px;margin: 50px;"></pagination-controls>
+    </div>
+    <!-- <div class="footer row m-0" id="footer">
+       <div class="col-sm-12 col-lg-12 icon-content " style="text-align: center;height: 72px">
+          <div class="row pt-2" style="text-align: center">
+             <span class="pl-2 pr-3"><img src="../../assets/social/Facebook_web.svg"></span>
+             <span class="pl-2 pr-3"><img src="../../assets/social/Instagram_web.svg"></span>
+             <span class="pl-2 pr-3"><img src="../../assets/social/Twitter_web.svg"></span>
+          </div>
+       </div>
+       <div class="nav-item mt-2 mb-2">
+       </div>
+    </div> -->
+ </section>
+ <div *ngIf="loader" class="loader"></div>

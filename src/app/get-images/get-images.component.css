@@ -1,0 +1,233 @@
+
+/* my css */
+.masonry-item {
+    width: 200px;
+}
+
+
+
+.masonry-item img {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    /*min-height: 340px;*/
+}
+
+.main-content {
+    width: 100%;
+    height: 720px;
+    /* box-sizing: border-box; */
+}
+
+.masonry-layout {
+    /*width: 80%;*/
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    box-shadow: 0 0 5px 0 gray;
+    padding: 6px;
+}
+
+/* .nav-item{
+
+} */
+
+.nav-content {
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.nav-content:hover,
+.nav-content:hover:active {
+    border-bottom: 2px solid green;
+}
+
+.input-text {
+    width: 60%;
+    margin: 30px auto;
+}
+
+.input-group-text {
+    background: transparent;
+    border-right: 0px;
+    border-radius: 50px 0 0 50px;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+
+.custom-input {
+    padding: 20px 0px;
+    border-left: 0px;
+    border-radius: 0 50px 50px 0;
+    box-shadow: none;
+    border: 1px solid gray;
+    border-left: 0px;
+}
+
+.icon-cust {
+    opacity: 0.5;
+}
+
+.potfolio {
+    height: calc(100% - 246px);
+    overflow: scroll;
+}
+
+/* to show scroll just commet this css */
+
+.potfolio::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.potfolio {
+    overflow: -moz-scrollbars-none;
+}
+
+.potfolio {
+    -ms-overflow-style: none;
+}
+
+/* ____________XXXXX_____________ */
+
+.footer {
+    background: #ccc;
+    margin: 100px 0;
+}
+
+/* grid css */
+
+/*img {*/
+/*  vertical-align: middle;*/
+/*}*/
+
+/*.img-responsive {*/
+/*  display: block;*/
+/*  max-width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
+.grid article {
+    background-color: #FFFFFF;
+    display: block;
+    float: left;
+    margin: 1%;
+    width: 23%;
+}
+
+.icon-content {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+@media (max-width: 1024px) {
+    .grid article {
+        width: 31.3%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid article {
+        width: 48%;
+    }
+}
+
+@media (max-width: 479px) {
+    .grid article {
+        margin: 2% 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .header {
+        display: none;
+    }
+
+    .potfolio {
+        height: calc(100% - 50px);
+        overflow: scroll;
+        margin: 0px;
+    }
+
+    .mob-header {
+        box-shadow: 0px 0px 5px 0px gray;
+        padding: 6px 0;
+    }
+
+    .nav-icons {
+        padding: 0 8px;
+        text-align: center;
+    }
+
+    .icon {
+        height: 15px;
+        width: 15px;
+    }
+
+    .input-text {
+        width: 60%;
+        margin: 24px auto;
+    }
+
+    .btn {
+        cursor: pointer;
+        line-height: 14px;
+        padding: 6px 20px;
+    }
+
+    .icon-title {
+        font-size: 10px;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 551px) {
+    .mob-header {
+        display: none;
+    }
+}
+
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249, 249, 249);
+}
+
+a:hover {
+    background-color:whitesmoke;
+    cursor: move;
+  }
+#shadow-element{
+    width: 50px !important;
+    height: 60px;
+    padding: 15px;
+    background-color: #ccc;
+    box-shadow: 5px 5px;
+    top: 176px;
+}
+  #footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center
+  }
+
+  #button_lazy{
+    cursor: pointer;
+    width: 40%;
+    height: 50px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 50px;
+  }
